@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+	window.onload=function(){
+		Vue.filter('toDou',function(input,a,b){
+			alert(a+','+b);
+			return input<10?'0'+input:''+input;
+		})
+		var vm=new Vue({
+			data:{
+				a:9
+			},
+			methods:{
+				
+			}
+		}).$mount('#box');
+	}
+</script>
+	</head>
+	<body>
+		<div id="box" >
+			<!--<input type="text" v-model="a"/>-->
+			{{a|toDou 1 2}}
+		</div>
+	</body>
+</html>

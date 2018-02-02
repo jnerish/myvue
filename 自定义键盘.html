@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+	window.onload=function(){
+		Vue.directive('on').keyCodes.ctrl=17;
+		Vue.directive('on').keyCodes.my=13;
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				a:'blue'
+			},
+			methods:{
+				show:function(){
+					 alert('1');
+				}
+			}
+		})
+	}
+</script>
+	</head>
+	<body>
+		<div id="box" >
+			<input type="text" @keydown.my='show|debounce 2000' />
+		</div>
+	</body>
+</html>

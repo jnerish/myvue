@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+	window.onload=function(){
+		new Vue({
+			el:'#box',
+			data:{
+				msg:'well'
+			},
+			created:function(){
+				alert('创建');
+			},
+			beforeCompile:function(){
+				alert('之前');
+			},
+			compiled:function(){
+				alert('之后');
+			}
+		});
+	}
+</script>
+	</head>
+	<body>
+		<div id="box">
+			{{msg}}
+		</div>
+	</body>
+</html>

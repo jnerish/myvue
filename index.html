@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="js/vue.js"></script>
+		<script type="text/javascript" src="js/vue-resource.js" ></script>
+		<title></title>
+		<script>
+		window.onload=function(){
+			new Vue({
+				  el: 'body',
+				  data: {
+				    
+				  },
+				  methods:{
+				  	post:function(){
+				  		this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+				  			wd:'a'
+				  		},{
+						    jsonp:'cb'	//callback名字，默认名字就是"callback"
+							}).then(function(c){
+				  			alert(c.data.s);
+				  		},function(){
+				  			alert('2');
+				  		});
+				  	}
+				  }
+				})
+			}
+
+		</script>
+	</head>
+	<body>
+		<input type="button" value="按钮" @click="post()"/>		
+	</body>
+</html>

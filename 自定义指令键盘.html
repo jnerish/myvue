@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			zns{
+				width: 100px;
+				height: 100px;				
+			}
+		</style>
+		<script src="js/vue.js"></script>
+		<script type="text/javascript">
+//			document.onkeydown=function(ev){
+//				alert(ev.keyCode);
+//			}
+			Vue.directive('on').keyCkeyCodes.ctrl=17;
+			window.onload=function(){
+				var vm=new Vue({	
+					el:'#box',
+					data:{
+						a:'blue'
+					},
+					methods:{
+						show:function(){
+							alert(1);
+						}
+					},c
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box" >
+			<input type="text" @keydown.ctrl='show' />
+		</div>
+		
+		
+	</body>
+</html>

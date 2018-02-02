@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script type="text/javascript">
+			Vue.directive('red',function(){
+				this.el.style.background='red';
+				console.log(this.el+'1');
+			})
+			window.onload=function(){
+				var rm=new Vue({	
+					el:'#box',
+					data:{
+						msg:'<strong>222</strong>'
+					},
+					
+				});
+				console.log(rm.$el+'2')
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box" v-red>
+			{{msg}}
+		</div>
+		
+	</body>
+</html>

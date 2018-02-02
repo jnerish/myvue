@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			zns{
+				width: 100px;
+				height: 100px;
+				
+			}
+		</style>
+		<script src="js/vue.js"></script>
+		<script type="text/javascript">
+			Vue.elementDirective('zns',{
+				bind:function(){
+					this.el.style.background='red';
+				}
+			});
+			window.onload=function(){
+				var vm=new Vue({	
+					el:'#box',
+					data:{
+						a:'blue'
+					}				
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box" >
+			<zns>22</zns>
+		</div>
+		
+		
+	</body>
+</html>

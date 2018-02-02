@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+	window.onload=function(){
+		var vm=new Vue({
+			data:{
+				msg:'well',
+				a:1
+			},
+			methods:{
+				show:function(){
+					alert('1');
+				}
+			}
+		}).$mount('#box');
+	}
+</script>
+	</head>
+	<body>
+		<div id="box" >
+			<input type="text" @keyup="show | debounce 2000"  />
+		</div>
+	</body>
+</html>
